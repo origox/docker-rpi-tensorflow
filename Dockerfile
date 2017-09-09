@@ -22,19 +22,14 @@ RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
     rm get-pip.py
 
 RUN pip --no-cache-dir install \
-        Pillow \
-        h5py \
         ipykernel \
         jupyter \
         matplotlib \
         numpy \
-        pandas \
-        scipy \
-        sklearn \
         && \
     python -m ipykernel.kernelspec
 
-ADD tensorflow-1.3.0-cp27-none-linux_armv7l.whl
+ADD tensorflow-1.3.0-cp27-none-linux_armv7l.whl .
 
 RUN pip install tensorflow-1.3.0-cp27-none-linux_armv7l.whl
 
